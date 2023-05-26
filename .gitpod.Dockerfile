@@ -2,6 +2,10 @@ FROM gitpod/workspace-full
 
 USER gitpod
 
+# Install curl and bash
+RUN sudo apt-get update \
+    && sudo apt-get install -y curl bash
+
 # Install dfx
 RUN curl -fsSL https://sdk.dfinity.org/install.sh | sh \
     && echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
